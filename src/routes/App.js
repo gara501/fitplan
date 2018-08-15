@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import UserList from '../users/UserList.js';
 import UserForm from '../users/UserForm.js';
+import fire from '../fire';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      users: [
-        {id: 1, firstname: 'Andres', lastname: 'Ramirez', email: 'gandres.ramirez@gmail.com'},
-        {id: 2, firstname: 'Felipe', lastname: 'cardona', email: 'felipe@gmail.com'},
-        {id: 3, firstname: 'Alex', lastname: 'Cardona', email: 'alex@gmail.com'},
-      ]
+      users: []
     }
+  }
+
+  componentWillMount(){
+  let usersRef = fire.database().ref('users').orderByKey().limitToLast(100);
+    usersRef.on('child_added', snapshot => {
+      console.log(snapshot.val());
+      let user = {
+        id: snapshot.key,
+        email: snapshot.val().email,
+        firstname: snapshot.val().firstname,
+        lastname: snapshot.val().lastname,
+      };
+      this.setState({ users: [user].concat(this.state.users)});
+    })
   }
 
   handleOnAddUser(event) {
@@ -22,6 +33,7 @@ class App extends Component {
       lastname: event.target.lastname.value,
       email: event.target.email.value,
     };
+    fire.database().ref('users').push(user);
     this.setState({
       users: this.state.users.concat([user])
     })
