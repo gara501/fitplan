@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UserList from '../users/UserList.js';
 import UserForm from '../users/UserForm.js';
+import Hero from '../containers/Hero.js';
 import fire from '../fire';
 
 
@@ -42,6 +43,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Hero></Hero>
         <UserList users={this.state.users} />
         <UserForm onAddUser={this.handleOnAddUser.bind(this)} />
       </div>

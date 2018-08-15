@@ -86,6 +86,7 @@ This is the place to put files that get copied and pasted between many different
 ## views
 
 Put components that render markup and styles here, along with components that receive and display user input. Dan Abramov calls them presentational components. I call them “views”, because it’s faster to type within import statements
+Ref: https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
 
 ## config
 

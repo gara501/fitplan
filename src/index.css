@@ -1,0 +1,86 @@
+:root {
+  --font-primary: 'Quicksand';
+  --font-secondary: sans-serif;
+  --font-base-size: 1em;
+  --text-scale-ratio: 1.2;
+  --text-color: #222;
+  --body-line-height: 1.2em;
+
+   /* type scale */
+   --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+   --text-sm: calc(1em / var(--text-scale-ratio));
+   --text-md: calc(1em * var(--text-scale-ratio));
+   --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+   --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+   --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+   --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-base-size);
+  color: var(--text-color);
+}
+
+.text--xxxl {
+  font-size: var(--text-xxxl);
+}
+
+h1, .text--xxl {
+  font-size: var(--text-xxl);
+  font-weight: 700;
+}
+
+h2, .text--xl {
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+h3 , .text--lg {
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+h4, .text--md {
+  font-size: var(--text-md);
+  font-weight: 500;
+}
+
+h5, .text-sm {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}
+
+p {
+  line-height: var(--body-line-height);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.poweredby {
+  display: block;
+  font-size: .8em;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+@media only screen  and (min-width : 1224px) {
+  :root {
+    --text-base-size: 1.25em;
+    --text-scale-ratio: 1.25;
+  }
+}
+
+@media only screen  and (min-width : 1400px) {
+  :root {
+    --text-base-size: 1.35em;
+    --text-scale-ratio: 1.35;
+  }
+}

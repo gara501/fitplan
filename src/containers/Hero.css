@@ -1,0 +1,22 @@
+.hero {
+  align-items: stretch;
+  display: flex;
+  flex-flow: row;
+  height: 100vh;
+  width: 100%;
+}
+
+.hero .side {
+  align-items: center;
+  display: flex;
+  flex:1;
+  justify-content: center;
+}
+
+.hero .side img {
+  width: 100%;
+}
+
+.textblock {
+  width: 50%;
+}
